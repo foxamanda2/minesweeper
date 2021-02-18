@@ -10,3 +10,23 @@ body {
   margin: 0;
   min-height: 100%;
 }
+h1 {
+  text-align: center;
+  margin: 0;
+  padding: var(--header-font-size);
+  background-color: lightblue;
+}
+table,
+td {
+  border: 1px solid #333;
+}
+
+thead,
+tfoot {
+  background-color: #333;
+  color: #fff;
+}
+td {
+  background-color: lightcoral;
+  padding: 1rem;
+}
