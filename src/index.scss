@@ -9,24 +9,28 @@ html {
 body {
   margin: 0;
   min-height: 100%;
-}
-h1 {
-  text-align: center;
-  margin: 0;
-  padding: var(--header-font-size);
-  background-color: lightblue;
+  background: #92ad94;
 }
 table,
 td {
   border: 1px solid #333;
 }
-
-thead,
-tfoot {
-  background-color: #333;
-  color: #fff;
-}
 td {
-  background-color: lightcoral;
-  padding: 1rem;
+  background-color: #f5fbef;
+  height: 30px;
+  width: 30px;
+  color: #2e4756;
+}
+table {
+  margin: 0px auto;
+}
+caption {
+  background-color: #92ad94;
+  color: #16262e;
+}
+button {
+  background-color: #16262e;
+  box-shadow: solid #16262e;
+  color: #f5fbef;
+  font-size: 1rem;
 }
