@@ -21,6 +21,9 @@ td {
   width: 30px;
   color: #2e4756;
 }
+td:active {
+  background-color: #c7ccc2;
+}
 table {
   margin: 0px auto;
 }
