@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Table } from './components/Table'
 
 export class App extends Component {
   state = {
@@ -58,7 +57,6 @@ export class App extends Component {
           MineSweeper <button onClick={this.handleNewGame}>New Game</button>
         </caption>
         <tbody className="table">
-          {/* <tr> */}
           {this.state.board.map((boardRow, rowIndex) => {
             return (
               <tr key={rowIndex}>
@@ -67,6 +65,9 @@ export class App extends Component {
                     <td
                       key={colIndex}
                       onClick={() => this.handleClickCell(rowIndex, colIndex)}
+                      onContextMenu={() =>
+                        this.handleFlagCell(rowIndex, colIndex)
+                      }
                     >
                       {cell}
                     </td>
