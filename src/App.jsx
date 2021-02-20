@@ -93,9 +93,11 @@ export class App extends Component {
                     <td
                       key={colIndex}
                       onClick={() => this.handleClickCell(rowIndex, colIndex)}
-                      onContextMenu={() =>
-                        this.handleFlagCell(rowIndex, colIndex)
-                      }
+                      onContextMenu={e => {
+                        e.preventDefault(
+                          this.handleFlagCell(rowIndex, colIndex)
+                        )
+                      }}
                     >
                       {cell}
                     </td>
