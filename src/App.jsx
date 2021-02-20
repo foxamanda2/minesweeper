@@ -12,9 +12,15 @@ export class App extends Component {
       [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
       [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
     ],
-    state: 'new',
   }
   handleClickCell = async (row, col) => {
+    if (
+      this.state.id === undefined ||
+      this.state.state === 'won' ||
+      this.state.state === 'lost'
+    ) {
+      return
+    }
     const url = `https://minesweeper-api.herokuapp.com/games/${this.state.id}/check`
     const body = { row: row, col: col }
     const response = await fetch(url, {
@@ -25,9 +31,6 @@ export class App extends Component {
     const game = await response.json()
     console.log(game)
     this.setState({ board: game.board })
-    if (game.state === 'won' || game.state === 'lost') {
-      console.log(game.state)
-    }
   }
   // handleDifficulty = async () => {
   //   const response = await fetch(
@@ -41,6 +44,13 @@ export class App extends Component {
   //   this.setState(game)
   // }
   handleFlagCell = async (row, col) => {
+    if (
+      this.state.id === undefined ||
+      this.state.state === 'won' ||
+      this.state.state === 'lost'
+    ) {
+      return
+    }
     const url = `https://minesweeper-api.herokuapp.com/games/${this.state.id}/flag`
     const body = { row: row, col: col }
     const response = await fetch(url, {
@@ -64,10 +74,17 @@ export class App extends Component {
     this.setState(game)
   }
   render() {
+    let header = 'MineSweeper'
+    if (this.state.state === 'won') {
+      header = 'YOU WON'
+    }
+    if (this.state.state === 'lost') {
+      header = 'Aww You Lost'
+    }
     return (
       <table>
         <caption>
-          MineSweeper <button onClick={this.handleNewGame}>New Game</button>
+          {header} <button onClick={this.handleNewGame}>New Game</button>
           {/* <button
             onClick={this.handleDifficulty}
           >
