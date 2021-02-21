@@ -12,7 +12,6 @@ export class App extends Component {
       [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
       [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
     ],
-    state: '',
   }
   handleClickCell = async (row, col) => {
     if (
@@ -75,12 +74,12 @@ export class App extends Component {
     this.setState(game)
   }
   render() {
-    let footer = 'Status:'
+    let footer = 'Status: '
     if (this.state.state === 'won') {
-      footer = 'won'
+      footer = 'Status: Won'
     }
     if (this.state.state === 'lost') {
-      footer = 'lost'
+      footer = 'Status: Lost'
     }
     return (
       <div>
