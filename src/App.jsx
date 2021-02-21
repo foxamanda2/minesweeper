@@ -12,6 +12,7 @@ export class App extends Component {
       [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
       [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
     ],
+    state: '',
   }
   handleClickCell = async (row, col) => {
     if (
@@ -74,17 +75,19 @@ export class App extends Component {
     this.setState(game)
   }
   render() {
-    let header = 'MineSweeper'
+    let footer = 'Status:'
     if (this.state.state === 'won') {
-      header = 'YOU WON'
+      footer = 'won'
     }
     if (this.state.state === 'lost') {
-      header = 'Aww You Lost'
+      footer = 'lost'
     }
     return (
-      <table>
-        <caption>
-          {header} <button onClick={this.handleNewGame}>New Game</button>
+      <div>
+        <header>
+          MineSweeper <button onClick={this.handleNewGame}>New Game</button>
+        </header>
+        <table>
           {/* <button
             onClick={this.handleDifficulty}
           >
@@ -100,31 +103,32 @@ export class App extends Component {
           >
             Hard
           </button> */}
-        </caption>
-        <tbody className="table">
-          {this.state.board.map((boardRow, rowIndex) => {
-            return (
-              <tr key={rowIndex}>
-                {boardRow.map((cell, colIndex) => {
-                  return (
-                    <td
-                      key={colIndex}
-                      onClick={() => this.handleClickCell(rowIndex, colIndex)}
-                      onContextMenu={e => {
-                        e.preventDefault(
-                          this.handleFlagCell(rowIndex, colIndex)
-                        )
-                      }}
-                    >
-                      {cell}
-                    </td>
-                  )
-                })}
-              </tr>
-            )
-          })}
-        </tbody>
-      </table>
+          <tbody className="table">
+            {this.state.board.map((boardRow, rowIndex) => {
+              return (
+                <tr key={rowIndex}>
+                  {boardRow.map((cell, colIndex) => {
+                    return (
+                      <td
+                        key={colIndex}
+                        onClick={() => this.handleClickCell(rowIndex, colIndex)}
+                        onContextMenu={e => {
+                          e.preventDefault(
+                            this.handleFlagCell(rowIndex, colIndex)
+                          )
+                        }}
+                      >
+                        {cell}
+                      </td>
+                    )
+                  })}
+                </tr>
+              )
+            })}
+          </tbody>
+        </table>
+        <footer>{footer}</footer>
+      </div>
     )
   }
 }

@@ -11,16 +11,13 @@ body {
   min-height: 100%;
   background: #92ad94;
 }
-table,
-td {
-  border: 1px solid #333;
-}
 td {
   background-color: #f5fbef;
   height: 30px;
   width: 30px;
   color: #2e4756;
   text-align: center;
+  box-shadow: 1px 2px;
 }
 td:active {
   background-color: #c7ccc2;
@@ -37,4 +34,10 @@ button {
   box-shadow: solid #16262e;
   color: #f5fbef;
   font-size: 1rem;
+}
+header {
+  text-align: center;
+}
+footer {
+  align-items: center;
 }
