@@ -88,25 +88,13 @@ export class App extends Component {
       footer = 'OH NO! YOU LOST!'
     }
 
-    let count
-
-    if (this.state.difficulty === 0) {
-      count = 10
-    }
-    if (this.state.difficulty === 1) {
-      count = 40
-    }
-    if (this.state.difficulty === 2) {
-      count = 99
-    }
-
     return (
       <div>
         <section className="board">
           <header>DropSweeper</header>
           <p>Don't Let the raindrops hit you!</p>
           <p>
-            Number Of Raindrops: <strong>{count}</strong>
+            Number Of Raindrops: <strong>{this.state.mines}</strong>
           </p>
           <nav>
             <button onClick={() => this.handleDifficulty(0)}>Easy</button>
