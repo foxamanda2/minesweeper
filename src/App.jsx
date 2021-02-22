@@ -53,6 +53,7 @@ export class App extends Component {
 
     this.setState(game)
   }
+
   handleFlagCell = async (row, col) => {
     if (
       this.state.id === undefined ||
@@ -76,20 +77,6 @@ export class App extends Component {
 
     this.setState(game)
   }
-  handleNewGame = async () => {
-    const response = await fetch(
-      'https://minesweeper-api.herokuapp.com/games?',
-      {
-        method: 'POST',
-
-        headers: { 'content-type': 'application/json' },
-      }
-    )
-
-    const game = await response.json()
-
-    this.setState(game)
-  }
   render() {
     let footer = ''
     if (this.state.state === 'won') {
@@ -99,11 +86,26 @@ export class App extends Component {
       footer = 'OH NO! YOU LOST!'
     }
 
+    let count
+
+    if (this.state.difficulty === 0) {
+      count = 10
+    }
+    if (this.state.difficulty === 1) {
+      count = 40
+    }
+    if (this.state.difficulty === 2) {
+      count = 99
+    }
+
     return (
       <div>
         <section className="board">
           <header>DropSweeper</header>
           <p>Don't Let the raindrops hit you!</p>
+          <p>
+            Number Of Raindrops: <strong>{count}</strong>
+          </p>
           <nav>
             <button onClick={() => this.handleDifficulty(0)}>Easy</button>
             <button onClick={() => this.handleDifficulty(1)}>Medium</button>
@@ -146,29 +148,27 @@ export class App extends Component {
               })}
             </tbody>
           </table>
-          <button className="newGame" onClick={this.handleNewGame}>
-            New Game
-          </button>
           <footer>{footer}</footer>
         </section>
         <section className="rules">
           <aside>
             Rules Of Play
             <ol>
-              <li>Click New Game.</li>
-              <li>Left Click on a space on the grid.</li>
-              <li>If you hit a raindrop you lose.</li>
+              <li>Click on the level you want</li>
+              <li>Left click on a spot on the grid.</li>
               <li>
                 The number on the board represents how many raindrops are
                 adjacent to the square (these can be diagonal to the square).
               </li>
+              <li>If you hit a raindrop you lose.</li>
               <li>
-                Right click to place a flower where you think a raindrop is.
+                Right click to place a flower place marker where you think a
+                raindrop is.
               </li>
               <li>Avoid all the raindrops and you win!</li>
               <li>
-                If you put a flower correctly on a raindrop a ladybug will
-                appear.
+                Once the game ends a ladybug will appear on the locations where
+                you correctly marked a raindrop flower correctly on a raindrop.
               </li>
             </ol>
           </aside>
