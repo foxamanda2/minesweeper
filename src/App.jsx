@@ -39,6 +39,7 @@ export class App extends Component {
 
     this.setState(game)
   }
+
   handleDifficulty = async difficultyNum => {
     const response = await fetch(
       `https://minesweeper-api.herokuapp.com/games?difficulty=${difficultyNum}`,
@@ -77,6 +78,7 @@ export class App extends Component {
 
     this.setState(game)
   }
+
   render() {
     let footer = ''
     if (this.state.state === 'won') {
@@ -168,7 +170,7 @@ export class App extends Component {
               <li>Avoid all the raindrops and you win!</li>
               <li>
                 Once the game ends a ladybug will appear on the locations where
-                you correctly marked a raindrop flower correctly on a raindrop.
+                you correctly marked a raindrop.
               </li>
             </ol>
           </aside>
