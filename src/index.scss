@@ -13,8 +13,8 @@ body {
   background: rgb(146, 173, 148);
   background: radial-gradient(
     circle,
-    rgba(146, 173, 148, 1) 43%,
-    rgba(172, 136, 135, 1) 100%
+    rgba(146, 173, 148, 1) 38%,
+    rgba(111, 193, 198, 1) 100%
   );
   font-family: 'Akaya Telivigala', cursive;
 
@@ -28,19 +28,12 @@ td {
   text-align: center;
   box-shadow: 2px 4px;
 }
-td:active {
+td:hover {
   background-color: #c7ccc2;
 }
 caption {
   background-color: #92ad94;
   color: #16262e;
-}
-.newGame {
-  background-color: #ac8887;
-  box-shadow: solid #16262e;
-  color: #f5fbef;
-  font-size: 20px;
-  margin-top: 10px;
 }
 header {
   font-size: 40px;
@@ -56,7 +49,7 @@ section {
   text-align: center;
 }
 section button {
-  background-color: #ac8887;
+  background-color: rgb(111, 193, 198);
   color: #f5fbef;
   font-size: 20px;
   margin-bottom: 10px;
@@ -67,7 +60,7 @@ footer {
   font-size: 40px;
 }
 aside {
-  border: dotted #f5fbef;
+  margin-top: 10px;
 }
 table {
   border: dotted #f5fbef;
