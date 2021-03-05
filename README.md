@@ -1,4 +1,4 @@
-# Minesweeper
+# Minesweeper (https://minesweeper-amandafox.netlify.app/)
 
 [Minesweeper](https://minesweeper-amandafox.netlify.app/)
 
