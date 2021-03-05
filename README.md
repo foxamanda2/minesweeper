@@ -1,6 +1,6 @@
-# Minesweeper (https://minesweeper-amandafox.netlify.app/)
+# Minesweeper
 
-[Minesweeper](https://minesweeper-amandafox.netlify.app/)
+[Minesweeper Link](https://minesweeper-amandafox.netlify.app/)
 
 ![Getting Started](Minesweeper.png)
 
@@ -8,12 +8,12 @@
 
 - Skills used
 
-Understand how state drives changes to an interface in React
+  - Understand how state drives changes to an interface in React
 
-Respond to user events in React
+  - Respond to user events in React
 
-Understand and use REST APIs
+  - Understand and use REST APIs
 
-Use React lifecycle methods
+  - Use React lifecycle methods
 
-Understand and interpret API documentation
+  - Understand and interpret API documentation
