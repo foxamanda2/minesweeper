@@ -6,14 +6,10 @@
 
 - I created a desktop site that communicated with a back-end API server to create the user-interface for a Minesweeper clone.
 
-- Skills used
-
-  - Understand how state drives changes to an interface in React
-
-  - Respond to user events in React
-
-  - Understand and use REST APIs
-
-  - Use React lifecycle methods
-
-  - Understand and interpret API documentation
+- Technologies used
+  - [API](https://hibernate.org/orm/what-is-an-orm/)
+  - [React](https://reactjs.org/)
+  - [Axios](https://www.sitepoint.com/axios-beginner-guide/)
+  - [React Lifecycle](https://reactjs.org/docs/react-component.html)
+  - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+  - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
